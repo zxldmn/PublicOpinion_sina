@@ -8,3 +8,13 @@ LOGIN_INFO={
     'USERID' : 'miggle_3@sina.com',
     'PASSWD' : 'APTX4869',
 }
+
+def get_sqlite_path():
+    '''
+    ##获取数据库路径
+    *   win系统和Linux路径不同，做个判断，sina.db放在base_pat下
+    '''
+    if "win" in sys.platform:
+        return get_base_path() + "\\" + "sina.db"
+    else:
+        return get_base_path() + "/" + "sina.db"
