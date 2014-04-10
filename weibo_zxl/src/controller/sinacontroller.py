@@ -42,6 +42,12 @@ class GetPublic:
         
         return sinaDao.save_weibo_info(weibo_info_lists)
 
+        user_info_lists = []
+        for i in range(len(r['statuses'])):
+            tmp = r['statuses'][i]
+            user_info_lists.append(tmp['user_id'],tmp['screen_name'],tmp['city_name'],tmp['followers_count'],tmp['friends_count'],tmp['statuses_count'])
+
+        return sinaDao.save_user_info(user_info_lists)
 
 
 
